@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import ColorBox from "./components/ColorBox";
 import ColorOption from "./components/ColorOption";
 import GameInstructions from "./components/GameInstructions";
@@ -11,10 +11,10 @@ import MusicToggle from "./components/MusicToggle";
 const colors = ["red", "blue", "green", "yellow", "purple", "orange"];
 
 const App = () => {
-  const [targetColor, setTargetColor] = useState<string>("");
-  const [score, setScore] = useState<number>(0);
-  const [highScore, setHighScore] = useState<number>(0);
-  const [gameStatus, setGameStatus] = useState<string>("");
+  const [targetColor, setTargetColor] = React.useState<string>("");
+  const [score, setScore] = React.useState<number>(0);
+  const [highScore, setHighScore] = React.useState<number>(0);
+  const [gameStatus, setGameStatus] = React.useState<string>("");
 
   // 🔄 Generate new target color
   const generateNewColor = () => {
@@ -50,7 +50,7 @@ const App = () => {
   };
 
   // 📦 Load high score on mount
-  useEffect(() => {
+  React.useEffect(() => {
     const storedHighScore = localStorage.getItem("highScore");
     if (storedHighScore) {
       setHighScore(Number(storedHighScore));
