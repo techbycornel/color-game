@@ -1,11 +1,17 @@
 import React from 'react';
 
-const Score: React.FC<{ score: number }> = ({ score }) => {
-    return (
-        <div data-testid="score">
-            Score: {score}
-        </div>
-    );
+interface ScoreProps {
+  score: number;
+  highScore: number;
+}
+
+const Score: React.FC<ScoreProps> = ({ score, highScore }) => {
+  return (
+    <div data-testid="score">
+      <p>Score: {score}</p>
+      <p>High Score: {highScore}</p>
+    </div>
+  );
 };
 
 export default Score;

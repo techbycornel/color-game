@@ -1,12 +1,12 @@
-import React from 'react';
+import React from "react";
 
 const GameInstructions: React.FC = () => {
-    return (
-        <div data-testid="gameInstructions">
-            <h2>Guess the correct color!</h2>
-            <p>Select the color that matches the box above.</p>
-        </div>
-    );
+  return (
+    <header className="header">
+      <h1>Color Guess</h1>
+      <p>Pick the color that matches</p>
+    </header>
+  );
 };
 
 export default GameInstructions;
